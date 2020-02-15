@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f2f6"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/gradient_color" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Profile"
+            android:layout_marginTop="50dp"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/text"
+            android:layout_centerHorizontal="true"
+            android:elevation="2dp"
+            android:src="@drawable/ic_schooldriver" />
+
+    </RelativeLayout>
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="20dp"
+        android:elevation="1dp"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="1dp">
+
+        <FrameLayout
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_edge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Name   "
+                    android:textSize="@dimen/medium_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/medium_text"
+                    android:id="@+id/tdrivername"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Phone# "
+                    android:textSize="@dimen/small_text" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:id="@+id/tdriverphone"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="DOB "
+                    android:textSize="@dimen/small_text" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:id="@+id/tdriverdob"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Address" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:id="@+id/tdriveraddress"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
+        android:elevation="1dp"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="1dp">
+
+        <FrameLayout
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_edge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Email   "
+                    android:textSize="@dimen/medium_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:id="@+id/tdriveremail"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Password "
+                    android:textSize="@dimen/small_text" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:id="@+id/tdriverpassword"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"/>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+     <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
+        android:elevation="1dp"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="1dp">
+
+        <FrameLayout
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_edge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="School   "
+                    android:textSize="@dimen/medium_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:id="@+id/tdriverschool"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Driver# "
+                    android:textSize="@dimen/small_text" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:id="@+id/tdrivernumber"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Joining Date "
+                    android:textSize="@dimen/small_text" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:id="@+id/tdriverjoining"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"/>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        android:background="#A9A9A9" />
+
+
+</LinearLayout>

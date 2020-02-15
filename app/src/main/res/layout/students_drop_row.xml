@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10.0dip"
+    android:layout_marginTop="10.0dip"
+    android:layout_marginRight="10.0dip"
+    android:layout_marginBottom="10.0dip"
+    card_view:cardCornerRadius="5.0dip"
+    card_view:cardElevation="1.0dip">
+
+    <FrameLayout
+        android:layout_width="4.0dip"
+        android:layout_height="fill_parent"
+        android:background="@drawable/card_edge" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="5.0dip"
+        android:orientation="vertical"
+        android:padding="10.0dip">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@id/studentavatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_person" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/studentavatar"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dstudentname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginTop="2.0dip"
+                    android:text="Student Name"
+                    android:textColor="#ff000000"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dip">
+
+                        <TextView
+                            android:id="@id/text1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Class# : " />
+
+                        <TextView
+                            android:id="@+id/dclassnumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5.0dip"
+                            android:layout_toRightOf="@id/text1"
+                            android:text="1" />
+
+                        <TextView
+                            android:id="@id/typeofclass"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/dclassnumber"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@id/text2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20.0dip"
+                            android:layout_toRightOf="@id/typeofclass"
+                            android:text="Sec : " />
+
+                        <TextView
+                            android:id="@+id/dsectionname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5.0dip"
+                            android:layout_toRightOf="@id/text2"
+                            android:text="A" />
+
+                        <TextView
+                            android:id="@id/text3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20.0dip"
+                            android:layout_toRightOf="@id/dsectionname"
+                            android:text="Roll# : " />
+
+                        <TextView
+                            android:id="@+id/drollnumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/text3"
+                            android:text="23" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/button_bg_rounded_corner_reverse"
+                android:text="drop"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

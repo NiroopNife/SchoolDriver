@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">School Driver</string>
+    <string name="title_activity_students_pick_drop">StudentsPickDrop</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="google_maps_key">AIzaSyDCefSyF4IUB1b1ohlN4WffBNkiS-gXZKQ</string>
+</resources>

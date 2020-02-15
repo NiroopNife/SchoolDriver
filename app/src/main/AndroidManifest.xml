@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.marty.track">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/ic_schooldriver"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_conifg"
+        android:roundIcon="@drawable/ic_schooldriver"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".Track.MainActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".School.SchoolActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Login.LoginActivity" />
+        <activity android:name=".ForgotPassword.PhaseOne.EmailActivity" />
+        <activity android:name=".ForgotPassword.PhaseTwo.OTPActivity" />
+        <activity android:name=".Home.HomeActivity" />
+        <activity android:name=".Profile.ProfileActivity" />
+        <activity android:name=".Students.StudentsList" />
+        <activity android:name=".StudentsPickAndDrop.StudentsPickDrop.StudentsPickDropActivity" />
+        <activity android:name=".SendLocation.LocationPosting"></activity>
+        <activity android:name=".StudentsPickAndDrop.StudentsPick.StudentsPickActivity"/>
+        <activity android:name=".StudentsPickAndDrop.StudentsDrop.StudentsDropActivity"/>
+        <activity android:name=".StudentsPickAndDrop.Route.GetRoute"/>
+
+        <service android:name=".SendLocation.LocationService" />
+        <service
+            android:name=".Track.LocationJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".Track.UploadLocationService"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>
