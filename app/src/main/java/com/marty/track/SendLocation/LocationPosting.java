@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -54,6 +55,8 @@ public class LocationPosting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.send);
 
+        Toast.makeText(mCtx, "Location Posting", Toast.LENGTH_SHORT).show();
+
         Button stopLocation = findViewById(R.id.stop);
         stopLocation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +69,8 @@ public class LocationPosting extends AppCompatActivity {
         driverid = bundle.getString("driver_id");
         driverschoolname = bundle.getString("driver_sid");
 
+//        SharedPreferences sharedPreferences = getSharedPreferences("SchoolPrefs", MODE_PRIVATE);
+//        driverschoolname = sharedPreferences.getString("ad_pkid", "");
 
         if (Build.VERSION.SDK_INT >= 23){
             if(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
@@ -121,7 +126,7 @@ public class LocationPosting extends AppCompatActivity {
                                 @Override
                                 public void onResponse(String response) {
                                     Log.d("LOG_RESPONSE", response);
-                                    Toast.makeText(LocationPosting.this, response, Toast.LENGTH_SHORT).show();
+//                                    Toast.makeText(LocationPosting.this, response, Toast.LENGTH_SHORT).show();
                                 }
                             }, new Response.ErrorListener() {
                         @Override

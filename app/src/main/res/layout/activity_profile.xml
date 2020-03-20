@@ -18,6 +18,7 @@
 
         <TextView
             android:id="@+id/text"
+            android:fontFamily="@font/arial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -69,17 +70,29 @@
 
                 <TextView
                     android:layout_width="0dp"
+                    android:textColor="@color/colorBlack"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="Name   "
+                    android:text="Name"
+                    android:fontFamily="@font/arial"
                     android:textSize="@dimen/medium_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:fontFamily="@font/arial"
+                    android:text=":"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:textSize="@dimen/medium_text"
                     android:id="@+id/tdrivername"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/arial"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1.5"/>
+                    android:layout_weight="1.4"/>
 
             </LinearLayout>
 
@@ -94,15 +107,25 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="Phone# "
+                    android:fontFamily="@font/arial"
+                    android:textColor="@color/colorBlack"
+                    android:text="Phone"
                     android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:fontFamily="@font/arial"
+                    android:text=":"/>
 
 
                 <TextView
                     android:layout_width="0dp"
+                    android:fontFamily="@font/arial"
                     android:id="@+id/tdriverphone"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1.5"/>
+                    android:layout_weight="1.4"/>
 
 
             </LinearLayout>
@@ -115,39 +138,26 @@
 
                 <TextView
                     android:layout_width="0dp"
+                    android:fontFamily="@font/arial"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="DOB "
-                    android:textSize="@dimen/small_text" />
-
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:id="@+id/tdriverdob"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.5"/>
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:textColor="@color/colorBlack"
                     android:text="Address" />
 
 
                 <TextView
                     android:layout_width="0dp"
+                    android:fontFamily="@font/arial"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:text=":"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:fontFamily="@font/arial"
                     android:id="@+id/tdriveraddress"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1.5"/>
+                    android:layout_weight="1.4"/>
 
 
             </LinearLayout>
@@ -158,79 +168,6 @@
 
     </androidx.cardview.widget.CardView>
 
-
-    <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginVertical="10dp"
-        android:elevation="1dp"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="1dp">
-
-        <FrameLayout
-            android:layout_width="4dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/card_edge" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_marginLeft="5dp"
-            android:padding="10dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="Email   "
-                    android:textSize="@dimen/medium_text" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:id="@+id/tdriveremail"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.5"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="Password "
-                    android:textSize="@dimen/small_text" />
-
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:id="@+id/tdriverpassword"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.5"/>
-
-
-            </LinearLayout>
-
-
-
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
 
      <androidx.cardview.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -262,16 +199,28 @@
 
                 <TextView
                     android:layout_width="0dp"
+                    android:fontFamily="@font/arial"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="School   "
+                    android:textColor="@color/colorBlack"
+                    android:text="School"
                     android:textSize="@dimen/medium_text" />
 
                 <TextView
                     android:layout_width="0dp"
+                    android:fontFamily="@font/arial"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:text=":"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:fontFamily="@font/arial"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/medium_text"
                     android:id="@+id/tdriverschool"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1.5"/>
+                    android:layout_weight="1.4"/>
 
             </LinearLayout>
 
@@ -283,17 +232,27 @@
 
                 <TextView
                     android:layout_width="0dp"
+                    android:fontFamily="@font/arial"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="Driver# "
+                    android:text="Driver"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:fontFamily="@font/arial"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:text=":"/>
 
 
                 <TextView
                     android:layout_width="0dp"
+                    android:fontFamily="@font/arial"
                     android:id="@+id/tdrivernumber"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1.5"/>
+                    android:layout_weight="1.4"/>
 
 
             </LinearLayout>
@@ -306,16 +265,26 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/arial"
                     android:layout_weight="0.5"
-                    android:text="Joining Date "
+                    android:text="Joining Date"
                     android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:fontFamily="@font/arial"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:text=":"/>
 
 
                 <TextView
                     android:layout_width="0dp"
+                    android:fontFamily="@font/arial"
                     android:id="@+id/tdriverjoining"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1.5"/>
+                    android:layout_weight="1.4"/>
 
 
             </LinearLayout>

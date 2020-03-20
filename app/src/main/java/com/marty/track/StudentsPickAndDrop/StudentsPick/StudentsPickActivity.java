@@ -2,6 +2,10 @@ package com.marty.track.StudentsPickAndDrop.StudentsPick;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -28,20 +32,23 @@ import java.util.List;
 
 public class StudentsPickActivity extends Activity {
 
+    public static final String MY_PREFS_NAME = "SchoolPrefs";
     private RecyclerView recyclerView;
     private StudentsPickAdapter adapter;
     String driverid, driverschoolname;
-
+    Context mCtx;
     private List<StudentsPickModel> students;
+    private ClickListener listener;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_students_pick);
 
-        Bundle bundle = getIntent().getExtras();
-        driverid = bundle.getString("driver_id");
-        driverschoolname = bundle.getString("driver_sid");
+        SharedPreferences preferences = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        driverid = preferences.getString("driver_id", "");
+        driverschoolname = preferences.getString("driver_sid", "");
 
         recyclerView = findViewById(R.id.students_pick_list);
         recyclerView.setHasFixedSize(true);
@@ -50,6 +57,8 @@ public class StudentsPickActivity extends Activity {
         students = new ArrayList<>();
 
         studentsPick();
+
+
     }
 
     private void studentsPick(){
@@ -58,7 +67,7 @@ public class StudentsPickActivity extends Activity {
         dialog.show();
 
         StringRequest request = new StringRequest(Request.Method.GET,
-                Constant.BASE_URL+"/studentlist/"+driverschoolname+"/"+driverid,
+                Constant.Route_URL+driverschoolname+"/"+driverid,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -73,12 +82,15 @@ public class StudentsPickActivity extends Activity {
                                         object.getString("as_lname"),
                                         object.getString("as_class"),
                                         object.getString("as_section"),
-                                        object.getString("as_roll_no")
+                                        object.getString("pdloc_name"),
+                                        object.getString("ap_guardian_phone"),
+                                        object.getString("pdloc_latitude"),
+                                        object.getString("pdloc_longitude")
 
                                 );
                                 students.add(pickList);
                             }
-                            adapter = new StudentsPickAdapter(students, getApplicationContext());
+                            adapter = new StudentsPickAdapter(students, getApplicationContext(), listener);
                             recyclerView.setAdapter(adapter);
 
                         } catch (JSONException e) {

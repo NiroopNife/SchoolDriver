@@ -18,6 +18,12 @@ public class LoginResponse {
         @SerializedName("dr_password")
         @Expose
         private String dr_password;
+        @SerializedName("pdloc_latitude")
+        private String pdloc_latitude;
+        @SerializedName("pdloc_longitude")
+        private String pdloc_longitude;
+        @SerializedName("pdloc_name")
+        private String pdloc_name;
         @SerializedName("dri_address")
         @Expose
         private String dri_address;

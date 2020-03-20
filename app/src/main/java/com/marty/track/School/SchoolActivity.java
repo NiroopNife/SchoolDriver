@@ -2,6 +2,7 @@ package com.marty.track.School;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -15,6 +16,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.marty.track.Login.LoginActivity;
 import com.marty.track.R;
+import com.marty.track.StudentsPickAndDrop.StudentsPickDrop.GetRoute;
+import com.marty.track.StudentsPickAndDrop.StudentsPickDrop.StudentsPickDropActivity;
 
 import java.util.List;
 
@@ -45,6 +48,13 @@ public class SchoolActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        finishAffinity();
+    }
+
     private void sendSchoolID(){
 
         final ProgressDialog dialog = new ProgressDialog(this);
@@ -68,16 +78,25 @@ public class SchoolActivity extends AppCompatActivity {
             public void onResponse(Call<SchoolResponse> call, Response<SchoolResponse> response) {
                 if (response.isSuccessful()){
                     String schoolid = "";
+                    String schoolLat = "";
+                    String schoolLng = "";
                     dialog.dismiss();
                     SchoolResponse resObj = response.body();
                     if (resObj.getStatus().equals("true")){
                         List<SchoolResponse.SchoolDetails> schoolDetails = resObj.res;
                         for (SchoolResponse.SchoolDetails details : schoolDetails){
                             schoolid += details.getSchool_id();
+                            schoolLat += details.getSchool_pick_latitude();
+                            schoolLng += details.getSchool_pick_longitude();
                             System.out.println("School ID : "+schoolid);
+                            SharedPreferences sharedPreferences = getSharedPreferences("SchoolPrefs", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("school_pick_latitude", schoolLat);
+                            editor.putString("school_pick_longitude", schoolLng);
+                            editor.putString("ad_pkid", schoolid);
+                            editor.commit();
                         }
                         Intent intent = new Intent(SchoolActivity.this, LoginActivity.class);
-                        intent.putExtra("school_id", schoolname);
                         startActivity(intent);
 
                     }

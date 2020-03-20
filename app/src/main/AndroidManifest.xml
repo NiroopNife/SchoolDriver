@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="false"
@@ -22,36 +24,41 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity
-            android:name=".Track.MainActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".School.SchoolActivity">
+
+        <activity android:name=".Main.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".School.SchoolActivity"/>
         <activity android:name=".Login.LoginActivity" />
         <activity android:name=".ForgotPassword.PhaseOne.EmailActivity" />
         <activity android:name=".ForgotPassword.PhaseTwo.OTPActivity" />
-        <activity android:name=".Home.HomeActivity" />
+        <activity android:name=".Main.HomeActivity" />
         <activity android:name=".Profile.ProfileActivity" />
         <activity android:name=".Students.StudentsList" />
         <activity android:name=".StudentsPickAndDrop.StudentsPickDrop.StudentsPickDropActivity" />
         <activity android:name=".SendLocation.LocationPosting"></activity>
-        <activity android:name=".StudentsPickAndDrop.StudentsPick.StudentsPickActivity"/>
-        <activity android:name=".StudentsPickAndDrop.StudentsDrop.StudentsDropActivity"/>
-        <activity android:name=".StudentsPickAndDrop.Route.GetRoute"/>
+        <activity android:name=".StudentsPickAndDrop.StudentsPick.StudentsPickActivity" />
+        <activity android:name=".StudentsPickAndDrop.StudentsDrop.StudentsDropActivity" />
+        <activity android:name=".StudentsPickAndDrop.StudentsDrop.GetStudentRoute" />
+        <activity android:name=".StudentsPickAndDrop.StudentsPickDrop.GetRoute" />
 
+        <service android:name=".Main.SendLocationService" />
         <service android:name=".SendLocation.LocationService" />
+
+        <receiver android:name=".Main.HomeActivity$LocationBroadCastReceiver" />
+
         <service
-            android:name=".Track.LocationJobService"
-            android:exported="true"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
-        <service
-            android:name=".Track.UploadLocationService"
-            android:exported="true" />
+            android:name=".Firebase.MyFirebaseService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -60,6 +67,7 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+
     </application>
 
 </manifest>

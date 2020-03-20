@@ -2,6 +2,7 @@ package com.marty.track.StudentsPickAndDrop.StudentsDrop;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ import java.util.List;
 
 public class StudentsDropActivity extends Activity {
 
+    public static final String MY_PREFS_NAME = "SchoolPrefs";
     private RecyclerView recyclerView;
     private StudentsDropAdapter adapter;
     String driverid, driverschoolname;
@@ -39,9 +41,10 @@ public class StudentsDropActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_students_drop);
 
-        Bundle bundle = getIntent().getExtras();
-        driverid = bundle.getString("driver_id");
-        driverschoolname = bundle.getString("driver_sid");
+        SharedPreferences preferences = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        driverid = preferences.getString("driver_id", "");
+        driverschoolname = preferences.getString("driver_sid", "");
+
 
         recyclerView = findViewById(R.id.students_drop_list);
         recyclerView.setHasFixedSize(true);
@@ -59,7 +62,7 @@ public class StudentsDropActivity extends Activity {
         dialog.show();
 
         StringRequest request = new StringRequest(Request.Method.GET,
-                Constant.BASE_URL + "/studentlist/" + driverschoolname + "/" + driverid,
+                Constant.Route_URL +"/" + driverschoolname + "/" + driverid,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -75,7 +78,10 @@ public class StudentsDropActivity extends Activity {
                                         object.getString("as_lname"),
                                         object.getString("as_class"),
                                         object.getString("as_section"),
-                                        object.getString("as_roll_no")
+                                        object.getString("pdloc_name"),
+                                        object.getString("ap_guardian_phone"),
+                                        object.getString("pdloc_latitude"),
+                                        object.getString("pdloc_longitude")
                                 );
                                 students.add(dropList);
                             }

@@ -4,7 +4,7 @@ public class Constant {
 
     public static String BASE_URL = "http://codecell.in/schools/Admin/";
     public static String Track_URL = "http://codecell.in/schools/Admin/location/";
-    public static String Route_URL = "http://codecell.in/schools/Admin/studentlist_pickloc/";
+    public static String Route_URL = "http://codecell.in/schools/Admin/studentlist_pickdrop/";
 
     static {
         StringBuilder sb = new StringBuilder();

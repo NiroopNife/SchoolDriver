@@ -10,10 +10,10 @@
         class="com.google.android.gms.maps.MapFragment"
         android:layout_weight="1"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/getdirection"
-        android:text="get direction"/>
+<!--    <Button-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/getdirection"-->
+<!--        android:text="get direction"/>-->
 
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.marty.track.SendLocation;
 
 import android.app.Service;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
@@ -24,6 +25,7 @@ public class LocationService extends Service {
 
     FusedLocationProviderClient fusedLocationProviderClient;
     LocationCallback locationCallback;
+    String driverschoolname, driverid;
 
     @Nullable
     @Override
@@ -33,6 +35,11 @@ public class LocationService extends Service {
 
     @Override
     public void onCreate() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences("SchoolPrefs", MODE_PRIVATE);
+        driverschoolname = sharedPreferences.getString("ad_pkid", "");
+        driverid = sharedPreferences.getString("driver_id", "");
+
         super.onCreate();
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         locationCallback = new LocationCallback(){
@@ -45,7 +52,7 @@ public class LocationService extends Service {
                 Retrofit retrofit = SendLocationClient.sendLocation();
                 SendLocationService service = retrofit.create(SendLocationService.class);
                 Call<SendLocationResponse> call = service.sendLocation(locationResult.getLastLocation().getLatitude(),
-                        locationResult.getLastLocation().getLongitude(), "5", "TMS");
+                        locationResult.getLastLocation().getLongitude(), driverid, driverschoolname);
                 System.out.println(call.toString());
                 call.enqueue(new Callback<SendLocationResponse>() {
                     @Override

@@ -1,6 +1,7 @@
 package com.marty.track.Students;
 
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ public class StudentsList extends AppCompatActivity {
     private RecyclerView recyclerView;
     private StudentsAdapter adapter;
     String driverid, driverschoolname;
-
+    public static final String MY_PREFS_NAME = "SchoolPrefs";
     private List<StudentsModel> students;
 
 
@@ -39,9 +40,13 @@ public class StudentsList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_students_list);
 
-        Bundle bundle = getIntent().getExtras();
-        driverid = bundle.getString("driver_id");
-        driverschoolname = bundle.getString("driver_sid");
+        SharedPreferences preferences = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        driverid = preferences.getString("driver_id", "");
+        driverschoolname = preferences.getString("driver_sid", "");
+
+//        Bundle bundle = getIntent().getExtras();
+//        driverid = bundle.getString("driver_id");
+//        driverschoolname = bundle.getString("driver_sid");
 
         recyclerView = findViewById(R.id.students_list);
         recyclerView.setHasFixedSize(true);

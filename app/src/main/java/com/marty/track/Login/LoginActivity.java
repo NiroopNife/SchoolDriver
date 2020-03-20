@@ -2,6 +2,7 @@ package com.marty.track.Login;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,7 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.marty.track.ForgotPassword.PhaseOne.EmailActivity;
-import com.marty.track.Home.HomeActivity;
+import com.marty.track.Main.HomeActivity;
+import com.marty.track.Main.SharedPrefs;
 import com.marty.track.R;
 
 import java.util.List;
@@ -26,7 +28,7 @@ import retrofit2.Retrofit;
 
 public class LoginActivity extends AppCompatActivity {
 
-    public static final String MY_PREFS_NAME = "MyPrefsFile";
+    public static final String MY_PREFS_NAME = "SchoolPrefs";
     EditText editPassword, editUsername;
     TextView forgotPassword;
     ImageButton submit;
@@ -37,8 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Bundle bundle = getIntent().getExtras();
-        schoolID = bundle.getString("school_id");
+        SharedPreferences preferences = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        schoolID = preferences.getString("ad_pkid", "");
 
         editUsername = findViewById(R.id.etusername);
         editPassword = findViewById(R.id.etpassword);
@@ -109,9 +111,13 @@ public class LoginActivity extends AppCompatActivity {
                     String driverMdate = "";
                     String driverMid = "";
                     String driverIsActive = "";
+                    String pdName = "";
+                    String pdLat = "";
+                    String pdLng = "";
                     dialog.dismiss();
                     LoginResponse resObj = response.body();
                     if (resObj.getStatus().equals("true")){
+                        SharedPrefs.setLoggedIn(getApplicationContext(), true);
                         List<LoginResponse.DriverDetails> driverDetails = resObj.resp;
                         for (LoginResponse.DriverDetails details : driverDetails){
                             driverID += details.getDri_pkid();
@@ -132,27 +138,29 @@ public class LoginActivity extends AppCompatActivity {
                             driverMdate += details.getDri_mdate();
                             driverMid += details.getDri_mid();
                             driverIsActive += details.getDri_isactive();
+                            SharedPreferences sharedPreferences = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("driver_id", driverID);
+                            editor.putString("driver_sid", driverSID);
+                            editor.putString("driver_number", driverNumber);
+                            editor.putString("driver_phone", driverPhone);
+                            editor.putString("driver_fname", driverFname);
+                            editor.putString("driver_lname", driverLname);
+                            editor.putString("driver_email", driverEmail);
+                            editor.putString("driver_password", driverPassword);
+                            editor.putString("driver_jdate", driverJdate);
+                            editor.putString("driver_dob", driverDOB);
+                            editor.putString("driver_address", driverAddress);
+                            editor.putString("driver_postcode", driverPostCode);
+                            editor.putString("driver_city", driverCity);
+                            editor.putString("driver_country", driverCountry);
+                            editor.putString("driver_cid", driverCid);
+                            editor.putString("driver_mdate", driverMdate);
+                            editor.putString("driver_mid", driverMid);
+                            editor.putString("driver_is_active", driverIsActive);
+                            editor.commit();
                         }
-                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                        intent.putExtra("driver_id", driverID);
-                        intent.putExtra("driver_sid", driverSID);
-                        intent.putExtra("driver_number", driverNumber);
-                        intent.putExtra("driver_phone", driverPhone);
-                        intent.putExtra("driver_fname", driverFname);
-                        intent.putExtra("driver_lname", driverLname);
-                        intent.putExtra("driver_email", driverEmail);
-                        intent.putExtra("driver_password", driverPassword);
-                        intent.putExtra("driver_jdate", driverJdate);
-                        intent.putExtra("driver_dob", driverDOB);
-                        intent.putExtra("driver_address", driverAddress);
-                        intent.putExtra("driver_postcode", driverPostCode);
-                        intent.putExtra("driver_city", driverCity);
-                        intent.putExtra("driver_country", driverCountry);
-                        intent.putExtra("driver_cid", driverCid);
-                        intent.putExtra("driver_mdate", driverMdate);
-                        intent.putExtra("driver_mid", driverMid);
-                        intent.putExtra("driver_is_active", driverIsActive);
-                        startActivity(intent);
+                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                     } else {
                         Toast.makeText(LoginActivity.this, "Not successful", Toast.LENGTH_SHORT).show();
                     }

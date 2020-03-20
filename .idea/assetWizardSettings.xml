@@ -35,7 +35,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/home/niroop/Documents/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_person_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/home/niroop/Documents/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_visibility_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -45,8 +45,8 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_person" />
-                                      <entry key="themeColor" value="ffffff" />
+                                      <entry key="outputName" value="ic_visibility_on" />
+                                      <entry key="themeColor" value="f6e58d" />
                                     </map>
                                   </option>
                                 </PersistentState>

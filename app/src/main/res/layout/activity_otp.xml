@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50.0dip"
             android:text="Enter the Generated OTP "
+            android:fontFamily="@font/arial"
             android:textAlignment="center"
             android:textSize="18.0sp" />
 
@@ -41,6 +42,7 @@
             android:id="@+id/etotp"
             android:layout_width="fill_parent"
             android:layout_height="55.0dip"
+            android:fontFamily="@font/arial"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginTop="10.0dip"
@@ -54,6 +56,7 @@
 
         <TextView
             android:layout_width="fill_parent"
+            android:fontFamily="@font/arial"
             android:layout_height="wrap_content"
             android:layout_marginTop="20.0dip"
             android:text="Enter your New Password"
@@ -62,6 +65,7 @@
 
         <EditText
             android:id="@+id/etnewpassword"
+            android:fontFamily="@font/arial"
             android:layout_width="fill_parent"
             android:layout_height="55.0dip"
             android:layout_centerHorizontal="true"
@@ -77,6 +81,7 @@
 
         <TextView
             android:layout_width="fill_parent"
+            android:fontFamily="@font/arial"
             android:layout_height="wrap_content"
             android:layout_marginTop="20.0dip"
             android:text="Enter Password again to Confirm"
@@ -85,6 +90,7 @@
 
         <EditText
             android:id="@+id/etconfirmpassword"
+            android:fontFamily="@font/arial"
             android:layout_width="fill_parent"
             android:layout_height="55.0dip"
             android:layout_centerHorizontal="true"

@@ -39,6 +39,7 @@
 
                 <TextView
                     android:id="@+id/studentname"
+                    android:fontFamily="@font/arial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -49,13 +50,16 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:fontFamily="@font/arial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
+                    android:textColor="@color/colorBlack"
                     android:layout_toLeftOf="@+id/admissionnumber"
-                    android:text="Admission# : " />
+                    android:text="Admission : " />
 
                 <TextView
+                    android:fontFamily="@font/arial"
                     android:id="@+id/admissionnumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -71,12 +75,15 @@
 
                 <TextView
                     android:id="@+id/text1"
+                    android:fontFamily="@font/arial"
+                    android:textColor="@color/colorBlack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Class# : " />
+                    android:text="Class : " />
 
                 <TextView
                     android:id="@+id/classnumber"
+                    android:fontFamily="@font/arial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -84,6 +91,7 @@
                     android:text="1" />
 
                 <TextView
+                    android:fontFamily="@font/arial"
                     android:id="@+id/typeofclass"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -91,14 +99,17 @@
                     android:text="st" />
 
                 <TextView
+                    android:fontFamily="@font/arial"
                     android:id="@+id/text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:textColor="@color/colorBlack"
                     android:layout_toRightOf="@+id/typeofclass"
                     android:text="Sec : " />
 
                 <TextView
+                    android:fontFamily="@font/arial"
                     android:id="@+id/sectionname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -107,14 +118,17 @@
                     android:text="A" />
 
                 <TextView
+                    android:fontFamily="@font/arial"
                     android:id="@+id/text3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:textColor="@color/colorBlack"
                     android:layout_toRightOf="@+id/sectionname"
-                    android:text="Roll# : " />
+                    android:text="Roll : " />
 
                 <TextView
+                    android:fontFamily="@font/arial"
                     android:id="@+id/rollnumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -127,12 +141,15 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:fontFamily="@font/arial"
                     android:id="@+id/isguardian"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
                     android:text="Guardian Name : " />
 
                 <TextView
+                    android:fontFamily="@font/arial"
                     android:id="@+id/guardianname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -140,13 +157,6 @@
                     android:text="My Name is Something "
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/guardianmobilenumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:text="9741814444"
-                    android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -154,12 +164,39 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:fontFamily="@font/arial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/isphone"
+                    android:textColor="@color/colorBlack"
+                    android:text="Phone : "/>
+
+
+                <TextView
+                    android:fontFamily="@font/arial"
+                    android:id="@+id/guardianmobilenumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/isphone"
+                    android:text="9741814444"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:fontFamily="@font/arial"
                     android:id="@+id/text5"
+                    android:textColor="@color/colorBlack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Address : " />
 
                 <TextView
+                    android:fontFamily="@font/arial"
                     android:id="@+id/guardianaddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

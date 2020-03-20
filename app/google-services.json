@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "188773424638",
+    "firebase_url": "https://school-driver-1500d.firebaseio.com",
+    "project_id": "school-driver-1500d",
+    "storage_bucket": "school-driver-1500d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188773424638:android:48c66fe1957791af1a74af",
+        "android_client_info": {
+          "package_name": "com.marty.track"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188773424638-upvsarfkugrbs9llflqtfuk6tphcmqjv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marty.track",
+            "certificate_hash": "aee53ae5e2d47d6ad4ec85b98c4e7918e1f3c2ad"
+          }
+        },
+        {
+          "client_id": "188773424638-559ivp7lhno0ff2fp3jgt27no0d4kcfd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyvin7uVZ-rPehe_PJlngXIREqwq1WCWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "188773424638-559ivp7lhno0ff2fp3jgt27no0d4kcfd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
